@@ -24,10 +24,7 @@ public class MovieController {
         return movieService.getMovies();
     }
 
-    /*@GetMapping("/movie/{id}")
-    public List<Movie> getById(@PathVariable Integer id) {
-        return movieService.getById(id);
-    }*/
+
 
     @PostMapping("/addMovie")
     public Movie createMovie(@RequestBody Movie movie){
@@ -40,8 +37,10 @@ public class MovieController {
     }
 
     @PutMapping("/updateMovie")
-    public Movie updateMovie(@RequestBody Movie movie){
-        return movieService.updateMovie(movie);
+    public Optional<Movie>updateMovie(@RequestBody Movie movie) {
+        Movie mo = movieService.updateMovie(movie);
+        Optional<Movie> opt= Optional.ofNullable(mo);
+        return opt;
     }
 
     @GetMapping("/movie/{id}")
@@ -53,9 +52,9 @@ public class MovieController {
         return this.movieService.obtenerPorPrioridad(prioridad);
     }*/
 
-    /*@GetMapping ("/movie/name")
-    public List<Movie>ObtenerPorNombre(@PathVariable("title") String title) {
-        return this.movieService.obtenerPorNombre(title);
-    }*/
+    @GetMapping ("/movie/{title}")
+    public List<Movie>obtenerPorNombre(@PathVariable("title") String title) {
+        return movieService.obtenerPorNombre(title);
+    }
 }
 

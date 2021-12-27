@@ -23,7 +23,6 @@ public class MovieService {
         return movieRepository.findAll();
     }
 
-    //public List <Movie> getById(Integer id) {return movieRepository.findAllById(id);}
 
     public Movie createMovie(Movie movie) {
         return movieRepository.save(movie);
@@ -43,6 +42,6 @@ public class MovieService {
 
     /*public List<Movie> obtenerPorPrioridad(Integer prioridad) { return movieRepository.findByPrioridad(prioridad); }*/
 
-    /*public List <Movie> obtenerPorNombre (String title) {return movieRepository.findByName(title); }*/
+    public List <Movie> obtenerPorNombre (String title) {return movieRepository.findByName(title); }
 }
 
