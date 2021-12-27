@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequestMapping("apiMovie/v1")
 @RestController
@@ -42,5 +43,19 @@ public class MovieController {
     public Movie updateMovie(@RequestBody Movie movie){
         return movieService.updateMovie(movie);
     }
+
+    @GetMapping("/movie/{id}")
+    public Optional<Movie> obtenerPorId(@PathVariable("id") Integer id) {
+        return this.movieService.obtenerPorId(id);
+    }
+    /*@GetMapping("/movie/prioridad")
+    public List<Movie>obtenerPorPrioridad(@RequestParam("prioridad") Integer prioridad) {
+        return this.movieService.obtenerPorPrioridad(prioridad);
+    }*/
+
+    /*@GetMapping ("/movie/name")
+    public List<Movie>ObtenerPorNombre(@PathVariable("title") String title) {
+        return this.movieService.obtenerPorNombre(title);
+    }*/
 }
 
