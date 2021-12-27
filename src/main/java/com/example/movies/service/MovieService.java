@@ -29,12 +29,16 @@ public class MovieService {
         return movieRepository.save(movie);
     }
 
+    //Eliminar
     public void deleteMovie(Integer id) { movieRepository.deleteById(id); }
 
+    //Modificar
     public Movie updateMovie(Movie movie) {
         return movieRepository.save(movie);
     }
 
+
+    //Por id
     public Optional<Movie> obtenerPorId (Integer id) { return movieRepository.findById(id); }
 
     /*public List<Movie> obtenerPorPrioridad(Integer prioridad) { return movieRepository.findByPrioridad(prioridad); }*/
