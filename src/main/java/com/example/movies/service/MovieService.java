@@ -3,6 +3,7 @@ package com.example.movies.service;
 import com.example.movies.model.Movie;
 import com.example.movies.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
@@ -40,7 +41,13 @@ public class MovieService {
     //Por id
     public Optional<Movie> obtenerPorId (Integer id) { return movieRepository.findById(id); }
 
+    public List<Movie> findClass(String classified) {
+        return movieRepository.findClass(classified);
+    }
 
+    public List<Movie> findMasVistas() {
+        return movieRepository.findMasVistas(PageRequest.of(0,3));
+    }
 
     //public List <Movie> obtenerPorNombre (String title) {return movieRepository.findByName(title); }
 }

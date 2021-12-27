@@ -49,9 +49,15 @@ public class MovieController {
     }
 
 
-    /*@GetMapping ("/movie/{title}")
-    public List<Movie>obtenerPorNombre(@PathVariable String title) {
-        return movieService.obtenerPorNombre(title);
-    }*/
+    @GetMapping("/movieClassified/{classified}")
+    public List <Movie> findClass( @PathVariable String classified) {
+        return movieService.findClass(classified);
+    }
+
+    @GetMapping("/movieMasVistas/{title}")
+    public List <Movie> findMasVistas( ) {
+        return movieService.findMasVistas();
+    }
+
 }
 
