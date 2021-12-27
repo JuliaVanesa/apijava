@@ -10,6 +10,6 @@ import java.util.List;
 public interface MovieRepository extends JpaRepository<Movie, Integer> {
     /*public abstract List<Movie>findByPrioridad(Integer prioridad);*/
     /*List<Movie>findByName(String title);*/
-    @Query ("select title from Movie")
+    @Query ("SELECT m FROM Movie m WHERE m.title LIKE %:title%")
     List <Movie>findByName(@Param("title") String title);
 }

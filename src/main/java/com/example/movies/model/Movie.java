@@ -1,9 +1,12 @@
 package com.example.movies.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@JsonIgnoreProperties(value={"hibernateLazyInitializer","handler","fieldHandler"})
 public class Movie implements Serializable {
 
     @Id
@@ -98,4 +101,21 @@ public class Movie implements Serializable {
         this.duration = duration;
     }
 
+
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", year=" + year +
+                ", director='" + director + '\'' +
+                ", gender='" + gender + '\'' +
+                ", plot='" + plot + '\'' +
+                ", poster='" + poster + '\'' +
+                ", classified='" + classified + '\'' +
+                ", rate=" + rate +
+                ", duration=" + duration +
+                '}';
+    }
 }

@@ -47,14 +47,11 @@ public class MovieController {
     public Optional<Movie> obtenerPorId(@PathVariable("id") Integer id) {
         return this.movieService.obtenerPorId(id);
     }
-    /*@GetMapping("/movie/prioridad")
-    public List<Movie>obtenerPorPrioridad(@RequestParam("prioridad") Integer prioridad) {
-        return this.movieService.obtenerPorPrioridad(prioridad);
-    }*/
 
-    @GetMapping ("/movie/{title}")
-    public List<Movie>obtenerPorNombre(@PathVariable("title") String title) {
+
+    /*@GetMapping ("/movie/{title}")
+    public List<Movie>obtenerPorNombre(@PathVariable String title) {
         return movieService.obtenerPorNombre(title);
-    }
+    }*/
 }
 

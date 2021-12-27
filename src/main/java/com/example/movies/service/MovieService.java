@@ -40,8 +40,8 @@ public class MovieService {
     //Por id
     public Optional<Movie> obtenerPorId (Integer id) { return movieRepository.findById(id); }
 
-    /*public List<Movie> obtenerPorPrioridad(Integer prioridad) { return movieRepository.findByPrioridad(prioridad); }*/
 
-    public List <Movie> obtenerPorNombre (String title) {return movieRepository.findByName(title); }
+
+    //public List <Movie> obtenerPorNombre (String title) {return movieRepository.findByName(title); }
 }
 
